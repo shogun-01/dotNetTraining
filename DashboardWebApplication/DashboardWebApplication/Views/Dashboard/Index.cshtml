@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model StudentDetailsModel;
+
+<h1>Hello World!!</h1>
+
+@Html.ActionLink("Get Student Details","ViewDetails","Dashboard")
+
+<br /><br />
+
+@using (Html.BeginForm("Save", "Dashboard", FormMethod.Post)){
+    @Html.Label("First Name:")
+    @Html.TextBoxFor(x => x.FirstName)
+    @Html.ValidationMessageFor(x => x.FirstName)
+    <br />
+
+    @Html.Label("Last Name:")
+    @Html.TextBoxFor(x => x.LastName)
+    @Html.ValidationMessageFor(x => x.LastName)
+    <br />
+
+    @Html.Label("Roll No:")
+    @Html.TextBoxFor(x => x.RollNo)
+    @Html.ValidationMessageFor(x => x.RollNo)
+    <br />
+
+    @Html.Label("Mobile Number:")
+    @Html.TextBoxFor(x => x.Contact)
+    @Html.ValidationMessageFor(x => x.Contact)
+    <br />
+
+    <input type="submit" value="Submit">
+}
